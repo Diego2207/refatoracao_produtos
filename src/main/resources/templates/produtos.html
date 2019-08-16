@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+	<div>
+		<div th:each="erro : ${xablau}">
+			<span th:text="${erro}"></span>
+        </div>
+        <form method="POST">
+        Nome : <input type="text" name="nome">
+        Valor do produto : <input type="number" name="valor">
+        <button type="submit">Cadastrar produto</button>
+        </form>
+        <div th:each="produto : ${produtos}">
+            <h3 th:text="${produto.nome}"></h3>
+            <p th:number="${produto.valor}"></p>
+        </div>
+	</div>
+    
+</body>
+</html>
